@@ -1,0 +1,10 @@
+install.packages("tidyverse")
+install.packages("BiocManager")
+BiocManager::install(version = "3.10")
+BiocManager::install(version = "3.12")
+BiocManager::install("Biostrings")
+library(tidyverse)
+library(Biostrings)
+download.file(url = "https://ra.cartwrig.ht/sars-cov-2.fasta.gz",destfile = "sars-cov-2.fasta.gz")
+dna_data <- readDNAStringSet("sars-cov-2.fasta.gz")
+dna_data
